@@ -103,6 +103,16 @@ const updateFavController = async(req,res)=>{
         })
     })
 
+    // fruitModel.findOne({_id:fruitId}).then( fruit =>
+    //      { fruit.name = name;
+    //       fruit.img = image;
+    //       fruit.price = price;
+    //       fruit.email = email;
+    //       fruit.save();
+
+    //      })
+    // let updatedList =  await fruitModel.find({})
+    // res.send(updatedList);
 }
 
 
