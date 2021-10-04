@@ -91,17 +91,17 @@ const updateFavController = async(req,res)=>{
     const fruitId = req.params.id;
     const{name, image,price,email} = req.body;
     fruitModel.findByIdAndUpdate(fruitId,{name, image,price,email} , (error,data)=>{
-        fruitModel.find({email:email}, (error,data) =>{
-        if(error){
+                if(error){
             console.log('===========================')
             console.log('An Error Occurred:')
             console.log(error)
             console.log('===========================')
             res.status(500).send(error) 
         }else{
-            res.json(data)}
-        })
-    })
+            fruitModel.find({email:email}, (error,data) =>{
+            res.json(data)})}
+            })
+    }
 
     // fruitModel.findOne({_id:fruitId}).then( fruit =>
     //      { fruit.name = name;
@@ -113,7 +113,7 @@ const updateFavController = async(req,res)=>{
     //      })
     // let updatedList =  await fruitModel.find({})
     // res.send(updatedList);
-}
+
 
 
 
